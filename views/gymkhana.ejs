@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            height: 100vh;
+            background-image: url(https://students.iitmandi.ac.in/main/images/bg/bgms.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            height: 100%;
+            max-width: 3000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container h1 {
+            margin: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 3rem;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .ele {
+            display: flex;
+            flex-direction: column;
+            width: 26%;
+            height: 20%;
+            position: relative;
+            margin-bottom: 2%;
+            border-radius: 5%;
+            overflow: hidden;
+            padding-bottom: 0%;
+        }
+
+        .ele_p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10%;
+            /* Takes up the bottom 10% of the .ele div */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-size: 1.1rem;
+            /* Adjust text size as needed */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Semi-transparent background */
+            color: white;
+            /* Text color */
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* .card {
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            position: relative;
+            margin-bottom: 2%;
+            border-radius: 5%;
+            overflow: hidden;
+            padding-bottom: 5%;
+        } */
+
+        .card img {
+            width: 100%;
+            filter: grayscale(50%);
+            box-shadow: 0 0 20px #333;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            /*following line prevents any spacing*/
+            display: block;
+
+            width: 100%;
+            height: 90%;
+            /* Takes up 90% of .ele */
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 10px #333);
+            transition: 0.3s;
+        }
+
+        .card:hover img {
+            filter: grayscale(10%);
+        }
+
+        .card figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 25px;
+            width: 100%;
+            height: 20%;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            opacity: 0;
+            border-radius: 0 0 10px 10px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0)100%);
+        }
+
+        .card:hover figcaption {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        #a {
+            color: rgb(128, 50, 50);
+        }
+    </style>
+
+    <title>Clubs</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="container">
+            <h1 id="a">GymKhana Clubs</h1>
+            <div class="gallery">
+                <% for (let el of club_lst) {%>
+                    <div class="ele">
+                        <a href="/gymkhanaclubs/<%=el._id%>">
+                            <figure class="card"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7EnXJnMNMLnYv9p11PGe_r-VXNx8RvRcQyg&s">
+                        </a>
+                        </figure><br>
+                        <p class="ele_p">
+                            <%=el.name%>
+                        </p></a>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
