@@ -29,7 +29,7 @@ node seed_users.js
 nodemon app.js
 ```
 
-3. **Accessing the Website:** Open a browser and paste the following link:
+4. **Accessing the Website:** Open a browser and paste the following link:
 ```bash 
 http://localhost:4040/
 ```
